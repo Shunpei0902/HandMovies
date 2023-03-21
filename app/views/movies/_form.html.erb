@@ -1,0 +1,32 @@
+<%= form_with(model: movie, class: "section") do |form| %>
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="field">
+        <%= form.label :Title, class: "label has-text-Black" %>
+        <div class="control">
+          <%= form.text_field :title, class: "input" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :Comment, class: "label has-text-Black" %>
+        <div class="control">
+          <%= form.text_area :introduction, class: "textarea" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= form.label :Movies, class: "label has-text-Black" %>
+        <div class="control">
+          <%= form.file_field :movies, direct_upload: true, multiple: true, class: "file is-normal" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <%= form.submit "Submit", class: "button is-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

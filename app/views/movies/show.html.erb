@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @movie %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= @movies.title %>
+</p>
+
+
+
+<% if @movies.movies.attached? %>
+  <div>
+    <p>
+      
+      <% @movies.movies.each do |movie| %>
+        <video src="<%= rails_blob_path(movie) %>" type="video/mp4" controls></video>
+      <% end %>
+    </p>
+  </div>
+<% end %>
+
+<p>
+  <strong>コメント:</strong>
+  <%= @movies.introduction %>
+</p>
+<tr>
+<td><%= link_to "Edit", edit_movie_path(@movie), class: "button is-primary is-light"%></td>
+<td><%= button_to "Delete", @movie, method: :delete, class: "button is-primary is-light"%></td>
+</tr>
