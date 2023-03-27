@@ -9,7 +9,7 @@ default: &default
   database: handmovies_db_lmwd
   #database: <%= ENV['POSTGRES_DB'] %>
   username: shumpei0902
-  password: AsanoShumpei0902
+  password: Lc6R7GlpHftlIq58dqTu2GIPPxHnEmdy
 
 development:
   <<: *default
