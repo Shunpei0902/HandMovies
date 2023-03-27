@@ -1,6 +1,6 @@
 databases:
   - name: HandMovies_DB
-    databaseName: handmovies_db
+    databaseName: handmovies_db_lmwd
     user: HandMovies
     region: singapore
 
