@@ -17,5 +17,5 @@ test:
 production:
   <<: *default
     #追加文
-    #url: <%= ENV['DATABASE_URL'] %>
+    url: <%= ENV['DATABASE_URL'] %>
 
