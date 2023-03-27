@@ -77,4 +77,6 @@ gem "bulma-rails"
 gem 'streamio-ffmpeg'
 gem 'image_processing'
 
-gem 'pg'
+group :production do
+  gem 'pg'
+end
