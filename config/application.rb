@@ -20,6 +20,6 @@ module HandMovies
     # config.eager_load_paths << Rails.root.join("extras")
 
     # デプロイするサービスのホストを追加する
-    config.hosts << 'xxx.onrender.com'
+    #config.hosts << 'xxx.onrender.com'
   end
 end
