@@ -1,13 +1,14 @@
 default: &default
   adapter: postgresql
-  encoding: unicode
+  #encoding: unicode
+  encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   #host: <%= ENV['POSTGRES_HOST'] %> 下記に変更
   host: dpg-cggi2064daddcg438grg-a
   #追加
   port: 5432
+  #database: <%= ENV['POSTGRES_DB'] %> 下記に変更
   database: handmovies_db_lmwd
-  #database: <%= ENV['POSTGRES_DB'] %>
   username: shumpei0902
   password: Lc6R7GlpHftlIq58dqTu2GIPPxHnEmdy
 
