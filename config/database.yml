@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   #host: <%= ENV['POSTGRES_HOST'] %> 下記に変更
-  host:　dpg-cggi2064daddcg438grg-a
+  host: dpg-cggi2064daddcg438grg-a
   #追加
   port: 5432
   database: handmovies_db_lmwd
