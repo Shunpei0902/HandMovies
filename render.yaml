@@ -1,7 +1,7 @@
 databases:
   - name: HandMovies_DB
     databaseName: handmovies_db_lmwd
-    user: HandMovies
+    user: shumpei0902
     region: singapore
 
 services:
