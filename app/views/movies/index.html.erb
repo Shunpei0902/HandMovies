@@ -1,4 +1,4 @@
-<section class="hero is-success">
+<section class="hero is-success is-bold">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
@@ -8,47 +8,46 @@
   </div>
 </section>
 
-<div class="columns is-centered">
-    <div class="column is-half">
-      <div class="field">
-        <div class="control">
-<%= form_with url: movies_path, method: :get do |form| %>
-  <%= form.text_field :search, placeholder: "キーワードを入力" %>
-  <%= form.submit "検索" %>
-<% end %>
-
-</div>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="field">
+          <%= form_with url: movies_path, method: :get, class: "control" do |form| %>
+            <div class="columns">
+              <div class="column is-three-quarters">
+                <%= form.text_field :search, class: "input", placeholder: "キーワードを入力" %>
+              </div>
+              <div class="column">
+                <%= form.submit "検索", class: "button is-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-    <% if @movies.any? %>
-  <h2>Search Results:</h2>
-  <ul>
-    <% @movies.each do |movie| %>
-      <li><%= link_to movie.title, movie %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No results found.</p>
-<% end %>
+    </div>
 
-<table>
-<thead>
-<tr>
-  <th>Title</th>
-  <th>Introduction</th>
-  <th colspan="20"></th>
-</tr>
-</thead>
-
-  <tbody>
-      <h2>Search Results:</h2>
-      <% @movies.each do |movie| %>
-        <tr>
-          <td><%= movie.title %></td>
-          <td><%= movie.introduction %></td>
-          <td><%= link_to 'Show', movie, class: "button is-light"%></td> 
-        </tr>
+    <div class="columns is-multiline">
+      <% if @movies.any? %>
+        <% @movies.each do |movie| %>
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-content">
+                <p class="title is-4"><%= link_to movie.title, movie %></p>
+                <p class="subtitle is-6"><%= movie.created_at.strftime("%Y年%m月%d日") %></p>
+                <div class="content">
+                  <%= truncate(movie.introduction, length: 150) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="column has-text-centered">
+          <p class="has-text-grey-light">No results found.</p>
+        </div>
       <% end %>
-  </tbody>
-</table>
+    </div>
 
-<br>
+  </div>
+</section>

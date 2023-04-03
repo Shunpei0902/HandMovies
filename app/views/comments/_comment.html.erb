@@ -1,0 +1,20 @@
+<div style="display: flex; align-items: center;">
+  <figure class="image is-48x48" style="border-radius: 50%; overflow: hidden; margin-right: 10px; margin-left:0px">
+    <% if comment.user.profile_image.attached? %>
+      <%= image_tag comment.user.profile_image %>
+    <% else %>
+      <%= image_tag 'no-image.png' %>
+    <% end %>
+  </figure>
+  <div style="flex: 1;">
+    <strong><%= comment.user.username %></strong>
+    <p style="margin-top: 5px;"><%= comment.content %></p>
+  </div>
+  <% if comment.user == current_user %>
+    <p><%= button_to "削除", movie_comment_path(@movie, comment), method: :delete, class: "button is-light" %></p>
+  <% end %>
+</div>
+
+
+
+
