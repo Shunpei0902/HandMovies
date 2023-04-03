@@ -1,0 +1,6 @@
+<%= form_with(model: [ @movie, Comment.new ], remote: true) do |form| %>
+	<div class="control">
+  	<%= form.text_area :content, class: "textarea has-fixed-size", placeholder: "コメントする" %>
+	</div>
+  <%=form.submit %>
+<% end %>

@@ -9,6 +9,18 @@
 </section>
 
 
+<% if @movies.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@movies.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @movies.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <%= render "form", movie: @movies %>
 
 
